@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CHRONOS MOBILE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="chronos.css">
+</head>
+<body class="theme-1">
+
+    <div id="auth-overlay">
+        <div class="auth-card">
+            <h2 style="font-family: 'Orbitron'; margin-bottom: 20px;">CHRONOS v1</h2>
+            <div id="auth-form">
+                <input type="text" id="user-id" placeholder="AGENT ID">
+                <input type="password" id="user-pass" placeholder="SECURITY CODE">
+                <button onclick="login()">AUTHORIZE ACCESS</button>
+                <p style="margin-top:15px; font-size:0.7rem; color:#666" onclick="signup()">ENLIST NEW AGENT</p>
+            </div>
+        </div>
+    </div>
+
+    <header><div class="logo">CHRONOS</div></header>
+
+    <main id="scroll-area">
+        <section id="page-hub" class="page active">
+            <div id="clock">00:00:00</div>
+            <div class="card">
+                <p id="location">LOCATING AGENT...</p>
+                <p id="date" style="color:var(--accent-sec)"></p>
+            </div>
+            <h4 style="font-size: 0.7rem; margin-bottom:5px;">SYSTEM ACTIVITY</h4>
+            <div class="sys-log" id="log-box"></div>
+        </section>
+
+        <section id="page-intel" class="page">
+            <h3 style="margin-bottom:15px;">INTEL FEED</h3>
+            <div id="intel-list"></div>
+        </section>
+
+        <section id="page-archive" class="page">
+            <h3 style="margin-bottom:15px;">GALLERY</h3>
+            <div id="archive-list"></div>
+        </section>
+
+        <section id="page-command" class="page">
+            <h3 style="margin-bottom:15px;">COMMAND CENTER</h3>
+            <div class="card">
+                <input type="text" id="post-title" placeholder="Entry Title">
+                <textarea id="post-body" placeholder="Mission details..."></textarea>
+                <input type="file" id="post-file" accept="image/*,video/*,audio/*">
+                <button onclick="deployIntel()">DEPLOY DATA</button>
+            </div>
+            <button onclick="clearStorage()" style="border-color:red; color:red; margin-top:20px;">WIPE DATA</button>
+        </section>
+    </main>
+
+    <nav>
+        <div class="nav-item active" onclick="navTo('hub', this)">Hub</div>
+        <div class="nav-item" onclick="navTo('intel', this)">Intel</div>
+        <div class="nav-item" onclick="navTo('archive', this)">Archive</div>
+        <div class="nav-item" onclick="navTo('command', this)">Cmd</div>
+    </nav>
+<script type="text/javascript" src="chronos.js"></script>
+    
+</body>
+</html>
